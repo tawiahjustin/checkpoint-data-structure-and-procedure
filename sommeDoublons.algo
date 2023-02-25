@@ -1,0 +1,19 @@
+ALGORITHM sommeDoublons;
+VAR
+    j: INTEGER:=0;
+    i: INTEGER:=0;
+    sum: INTEGER:=0;
+    ensemble1: ARRAY_OF CHAR[4];
+    ensemble2: ARRAY_OF CHAR[4];
+BEGIN
+    ensemble1:={12, 13, 6, 10};
+    ensemble2:={13, 10, 16, 15};
+    FOR i FROM 0 TO ensemble1.length-1 STEP 1 DO
+        FOR j FROM 0 TO ensemble2.length-1 STEP 1  DO
+            IF (ensemble1[i]==ensemble2[j]) THEN
+                sum = sum + ensemble1[i] * 2;
+            END_IF
+        END_FOR 
+    END_FOR
+    WRITE("la somme des doublons est ",sum);
+END
